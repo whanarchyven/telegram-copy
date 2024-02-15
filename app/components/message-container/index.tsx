@@ -42,9 +42,6 @@ const MessageContainer = () => {
                         <img className={'h-full'} src={'/images/send_message.svg'}/>
                     </div> : <img className={'h-[28px] pb-1'} src={'/images/micro.svg'}/>}
             </div>
-            <div className={'absolute w-1/3 bg-cGray h-1 rounded-full bottom-5'}>
-
-            </div>
         </div>
     );
 };
