@@ -20,7 +20,7 @@ const cvaPlayButtonContainer = cva(['w-11 h-11 p-3.5 flex items-center justify-c
         }
     }
 })
-const cvaPlayButtonIcon=cva([''],{
+const cvaPlayButtonIcon=cva(['w-full h-full'],{
     variants:{
         type: {
             mine:['fill-cGreen'],
