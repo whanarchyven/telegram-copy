@@ -19,6 +19,9 @@ const config: Config = {
       colors:{
         cBlue:'#0E76F1',
         cGray:'#707579',
+        cGrayLight:'#e4e4e4',
+        cGreen:'#E3FFCA',
+        cGreenAccent:'#5ca853'
       }
     },
   },
