@@ -19,7 +19,7 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <title>Telegram</title>
-            <link rel={'manifest'} href={'/public/manifest.json'}/>
+            <link rel={'manifest'} href={'/manifest.json'}/>
         </head>
         <ReduxProvide>
             <body className={'flex flex-col h-screen'}>
