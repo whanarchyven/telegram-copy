@@ -18,7 +18,8 @@
     "next-redux-wrapper": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "react-textarea-autosize": "8.5.3"
   },
   "devDependencies": {
     "typescript": "^5",
