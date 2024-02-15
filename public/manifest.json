@@ -3,8 +3,7 @@
   "short_name": "telegram",
   "theme_color": "#fff",
   "background_color": "#fff",
-  "display": "fullScreen",
-  "orientation": "portrait",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/"
 }
