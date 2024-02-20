@@ -3,20 +3,51 @@ import React, {useState} from 'react';
 import TextareaAutosize from "react-textarea-autosize";
 import {useAppDispatch} from "@/app/store/hooks/useAppDispatch";
 import {messagesActions} from "@/app/store/messagesSlice";
+import {chatIdActions} from "@/app/store/chatIdSlice";
+import {dialogues} from "@/app/data/dialogues";
+import {useAppSelector} from "@/app/store/hooks/useAppSelector";
+import {chatIdSelectors} from "@/app/store/chatIdSlice";
 
 const MessageContainer = () => {
 
     const [message, setMessage] = useState('')
+    const [messagesCount, setMessagesCount] = useState(0)
     const dispatch = useAppDispatch()
     const sendMessage = (message: string) => {
         let temp = new Date()
-        dispatch(messagesActions.addMessage({message: message, time: temp.toISOString()}))
+        dispatch(messagesActions.addMessage({message: message, time: temp.toISOString(), type: 'mine'}))
+        dispatch(chatIdActions.setStatus({status: 'online'}))
+        setTimeout(() => {
+            dispatch(chatIdActions.setStatus({status: 'typing'}))
+        }, 1000)
     }
 
-    const requestMessage=()=>{
-        let randomDuration=Math.floor(Math.random() * 180) + 1;
+    const data = dialogues
+
+    const storeChatId = useAppSelector(chatIdSelectors.chatId)
+
+    const findDialogue = (chatId: string) => {
+        const index = data.find(item => item.id == chatId)
+        if (index) {
+            return index
+        } else {
+            return data[0]
+        }
+    }
+    const requestMessage = (chatId: string) => {
         let temp = new Date()
-        dispatch(messagesActions.requestMessage({duration:randomDuration,time:temp.toISOString()}))
+        const dialogue = findDialogue(chatId)
+        const answerMessage = dialogue.body[messagesCount]
+
+        answerMessage.answers.map((item) => {
+            setTimeout(() => {
+                dispatch(messagesActions.addMessage({message: item, time: temp.toISOString(), type: 'foreign'}))
+                dispatch(chatIdActions.setStatus({status:'online'}))
+            }, dialogue.body[messagesCount].delay * 50)
+
+        })
+        setMessagesCount(messagesCount + 1)
+
     }
 
     return (
@@ -27,7 +58,8 @@ const MessageContainer = () => {
                 <div className={'bg-white flex items-end px-3 pr-2 gap-1 w-full rounded-2xl py-[0.1rem]'}>
                     <TextareaAutosize value={message} onChange={(event: any) => {
                         setMessage(event.target.value)
-                    }} className={'text-lg w-full focus:outline-none hover:outline-none font-sf'} placeholder={'Сообщение'}
+                    }} className={'text-lg w-full focus:outline-none hover:outline-none font-sf'}
+                                      placeholder={'Сообщение'}
                                       maxRows={12}/>
                     {message.length > 0 ? <img className={'w-[1.3rem] pb-1'} src={'/images/emoji.svg'}/> :
                         <img className={'w-[1.3rem] pb-1'} src={'/images/stickers.svg'}/>}
@@ -36,7 +68,7 @@ const MessageContainer = () => {
                     <div onClick={() => {
                         sendMessage(message);
                         setMessage('')
-                        setTimeout(()=>{requestMessage()},3000)
+                        requestMessage(storeChatId.chatId)
                     }}
                          className={'w-[28px] aspect-square h-[28px] p-1.5 flex items-center justify-center rounded-full bg-cBlue'}>
                         <img className={'h-full'} src={'/images/send_message.svg'}/>

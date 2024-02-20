@@ -15,12 +15,12 @@ const MessagesSlice = createSlice({
   name: 'messages',
   initialState,
   reducers: {
-    addMessage: (state, action: PayloadAction<{ message:string,time:string }>) => {
-      state.messages.push({children:action.payload.message,category:'default',author:'wh',status:'accepted',time:action.payload.time,type:'mine'});
+    addMessage: (state, action: PayloadAction<{ message:string,time:string,type:'mine'|'foreign' }>) => {
+      state.messages.push({children:action.payload.message,category:'default',author:'wh',status:'accepted',time:action.payload.time,type:action.payload.type});
     },
-    requestMessage: (state, action: PayloadAction<{duration:number,time:string}>) => {
+    requestVoiceMessage: (state, action: PayloadAction<{duration:number,time:string}>) => {
       state.messages.push({children:'action.payload.message',category:'voice',author:'wh',status:'accepted',time:action.payload.time,type:'foreign',duration:action.payload.duration});
-    }
+    },
   },
 });
 

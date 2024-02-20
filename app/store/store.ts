@@ -6,9 +6,11 @@ import {
 } from '@reduxjs/toolkit';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import message from './messagesSlice';
+import chatId from './chatIdSlice';
 
 const combinedReducer = combineReducers({
   message,
+  chatId
 });
 
 export const makeStore = configureStore({

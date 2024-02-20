@@ -1,14 +1,28 @@
 "use client"
-import {FC} from 'react';
+import {FC, useEffect, useState} from 'react';
 import {cva, VariantProps} from "class-variance-authority";
 import {useSearchParams} from "next/navigation";
-
+import {useAppSelector} from "@/app/store/hooks/useAppSelector";
+import {chatIdActions, chatIdSelectors, IChatIdSliceState} from "@/app/store/chatIdSlice";
+import {BeatLoader} from "react-spinners";
+import {useAppDispatch} from "@/app/store/hooks/useAppDispatch";
 const Header: FC = () => {
 
     const params = useSearchParams()
     const name = params.get('name') ?? 'Aicharm Bot'
     const messagesQnt = params.get('messages') ?? 2152
     const displayPremiumIcon = params.get('premium') != 'false'
+
+    const dispatch=useAppDispatch()
+    const chatStatus=useAppSelector(chatIdSelectors.status)
+
+    const storeChatId=useAppSelector(chatIdSelectors.chatId)
+
+    useEffect(() => {
+        dispatch(chatIdActions.setChatId({chatId:params.get('chatId') ?? 'greeting_and_registering_example1'}))
+    }, [storeChatId]);
+
+    const chatId = params.get('messages') ?? 2152
 
     const translateColorType = (color: string | null | undefined): colorInterface['color'] => {
         if (color == 'pink' || color == 'blue' || color == 'green' || color == 'indigo' || color == 'yellow') {
@@ -32,6 +46,8 @@ const Header: FC = () => {
     const cvaAccountName = cva(['font-sf text-lg font-[500] tracking-wide leading-[100%]'])
     const cvaPremiumIcon = cva(['w-4'])
     const cvaTimeRecent = cva(['font-sf text-cGray leading-[100%] text-sm'])
+    const cvaTimeOnline = cva(['font-sf text-cBlue leading-[100%] text-sm'])
+    const cvaTimeTyping = cva(['font-sf text-cBlue leading-[100%] text-sm flex items-center gap-1'])
 
     const cvaAvatar = cva(['w-10 h-10 rounded-full bg-gradient-to-b flex text-white font-bold items-center justify-center capitalize'], {
         variants: {
@@ -53,6 +69,25 @@ const Header: FC = () => {
     }
     const avatarBody = getAvatarBody(name)
 
+    const [status,setStatus]=useState(chatStatus.status)
+
+    useEffect(() => {
+        setStatus(chatStatus.status)
+    }, [chatStatus]);
+
+    const translateChatStatus=(status:IChatIdSliceState['status'])=>{
+        switch (status) {
+            case "offline":
+                return <p className={cvaTimeRecent()}>был(а) недавно</p>
+            case "online":
+                return <p className={cvaTimeOnline()}>в сети</p>
+            case "typing": return <div className={cvaTimeTyping()}>
+                <BeatLoader color={'#0E76F1'} size={5}/>
+                <p>печатает</p>
+            </div>
+        }
+    }
+
     return (
         <div
             className={cvaHeaderContainer()}>
@@ -68,7 +103,7 @@ const Header: FC = () => {
                     <p className={cvaAccountName()}>{name}</p>
                     {displayPremiumIcon && (<img className={cvaPremiumIcon()} src={'/images/premium.svg'}/>)}
                 </div>
-                <p className={cvaTimeRecent()}>был(а) недавно</p>
+                {translateChatStatus(status)}
             </div>
             <div
                 className={cvaAvatar({color: color})}>

@@ -51,7 +51,7 @@ const cvaMessageTimeTitle = cva(['text-xs font-sf'], {
         },
     }
 })
-const cvaMessageBodyBlock = cva(['whitespace-pre-wrap break-all', 'leading-[120%]'])
+const cvaMessageBodyBlock = cva(['whitespace-pre-wrap ', 'leading-[120%]'])
 const cvaTail = cva(['self-end absolute w-3'], {
     variants: {
         type: {
