@@ -7,7 +7,7 @@ export interface IChatIdSliceState {
 }
 
 const initialState: IChatIdSliceState = {
-  chatId: 'greeting_and_registering_example1',
+  chatId: 'new_client_registration',
   status:'offline'
 };
 
