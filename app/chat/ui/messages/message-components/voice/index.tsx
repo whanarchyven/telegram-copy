@@ -2,7 +2,7 @@
 import {FC, useEffect, useState} from 'react';
 import {cva} from "class-variance-authority";
 import {VariantProps} from "class-variance-authority";
-import Message, {MessageProps} from "@/app/components/messages/message-components/message";
+import Message, {MessageProps} from "@/app/chat/ui/messages/message-components/message";
 import Play from "/public/images/icons/play.svg"
 import AudioVisualizer from "./ui/audio-visualizer";
 import {format, intervalToDuration} from "date-fns";

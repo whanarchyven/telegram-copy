@@ -1,7 +1,7 @@
 "use client"
 import {FC, useEffect, useRef, useState} from 'react';
 import Message, {MessageProps} from "./message-components/message";
-import AudioVisualizer from "@/app/components/messages/message-components/voice/ui/audio-visualizer";
+import AudioVisualizer from "@/app/chat/ui/messages/message-components/voice/ui/audio-visualizer";
 import Voice, {VoiceMessageProps} from "./message-components/voice";
 
 export interface MessagesInterface {

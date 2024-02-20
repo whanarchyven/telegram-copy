@@ -1,8 +1,5 @@
 import {Inter} from "next/font/google";
-import "./globals.css";
 import ReduxProvide from "@/app/store/ReduxProvider";
-import EditIcon from "@/public/images/icons/navbar/edit.svg"
-import PlusIcon from "@/public/images/icons/navbar/plus.svg"
 import TopMenu from "@/app/ui/top-menu";
 import Navbar from "@/app/ui/navbar";
 
@@ -22,8 +19,10 @@ export default function RootLayout({
             <link rel={'manifest'} href={'/manifest.json'}/>
         </head>
         <ReduxProvide>
-            <body className={'relative h-screen'}>
+            <body className={'relative flex-col'}>
+            <TopMenu/>
             {children}
+            <Navbar/>
             </body>
         </ReduxProvide>
         </html>

@@ -1,7 +1,8 @@
 export const dialogues = [
     {
         id: 'new_client_registration',
-        name: 'Greeting and Registering a New Client (Newbies)',
+        name: 'Newbies',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'Hi, I\'m new here. How do I register?',
@@ -55,7 +56,8 @@ export const dialogues = [
     },
     {
         id: 'making_deposit_and_receiving_bonuses',
-        name: 'Making a Deposit and Receiving Bonuses',
+        name: 'Deposit',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'How do I make a deposit?',
@@ -79,7 +81,8 @@ export const dialogues = [
     },
     {
         id: 'technical_issues_with_games_or_bets',
-        name: 'Technical Issues with Games or Bets (Bug Related Issues in Games)',
+        name: 'Bug Issues',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'I\'m experiencing a glitch in one of the games. What should I do?',
@@ -115,7 +118,8 @@ export const dialogues = [
     },
     {
         id: 'withdrawal_request_inquiries',
-        name: 'Withdrawal Request Inquiries',
+        name: 'Withdrawal Request',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'I requested a withdrawal, but it hasn\'t been credited to my bank account yet.',
@@ -145,7 +149,8 @@ export const dialogues = [
     },
     {
         id: 'concerns_about_gambling_addiction',
-        name: 'Concerns About Gambling Addiction (Addiction)',
+        name: 'Addiction',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'I think I need to take a break from gambling. Can you help me set up a self-exclusion?',
@@ -181,7 +186,8 @@ export const dialogues = [
     },
     {
         id: 'closing_an_account_upon_client_request',
-        name: 'Closing an Account upon Client\'s Request',
+        name: 'Closing Account',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'I need to close my account immediately.',
@@ -217,7 +223,8 @@ export const dialogues = [
     },
     {
         id: 'verifying_or_changing_customer_contact_details',
-        name: 'Verifying or Changing Customer Contact Details',
+        name: 'Changing Contact',
+        startMessage:'Hi! I will help you with any question',
         body: [
             {
                 request: 'I need to update my email address. How can I do that?',

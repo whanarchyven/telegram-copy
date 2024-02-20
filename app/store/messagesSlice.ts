@@ -1,7 +1,7 @@
 import { RootState } from './store';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {MessageProps} from "@/app/components/messages/message-components/message";
-import {VoiceMessageProps} from "@/app/components/messages/message-components/voice";
+import {MessageProps} from "@/app/chat/ui/messages/message-components/message";
+import {VoiceMessageProps} from "@/app/chat/ui/messages/message-components/voice";
 
 export interface IMessagesSliceState {
   messages: Array<MessageProps|VoiceMessageProps>;
@@ -20,6 +20,9 @@ const MessagesSlice = createSlice({
     },
     requestVoiceMessage: (state, action: PayloadAction<{duration:number,time:string}>) => {
       state.messages.push({children:'action.payload.message',category:'voice',author:'wh',status:'accepted',time:action.payload.time,type:'foreign',duration:action.payload.duration});
+    },
+    reset: (state, action: PayloadAction<{}>) => {
+      state.messages=[];
     },
   },
 });
