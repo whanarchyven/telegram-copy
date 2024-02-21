@@ -62,7 +62,19 @@ export const dialogues = [
                 '[✓] Customer: Expressed gratitude for the help and information about additional opportunities\n' +
                 '[✓] Manager: Offered additional interaction after solving the main problem\n' +
                 '[✓] Customer: said goodbye, expressing pleasure from the conversation\n' +
-                '[✓] Manager: said goodbye, reminding of availability for any future requests'],
+                '[✓] Manager: said goodbye, reminding of availability for any future requests', 'Summary of client: The client is interested in gambling and registering at the casino. He actively participates in the dialogue, asks questions about the registration process, necessary documents, and bonuses for new players. The client shows interest in increasing his deposit to receive a larger bonus and eventually agrees to the agent\'s offer.\n' +
+                '\n' +
+                'Client name: Unknown\n' +
+                'Client status: New\n' +
+                'Client goal: To register at the casino and receive bonuses\n' +
+                'Manager goal: To register the client and offer him attractive bonuses\n' +
+                'Client recognized: No\n' +
+                'Client psy profile: The client shows interest in gambling and bonuses, is willing to interact and cooperate with the agent to get the best offers.\n' +
+                'Client mbti: ESTP\n' +
+                'Client mbti confidence percent: 70\n' +
+                'Client mbti traits: The client is action-oriented, flexible in decision-making, seeks opportunities and benefits, and is open to new offers.\n' +
+                'Client decision point: The moment when the client agreed to increase his deposit to 30 euros to receive a 200% bonus.\n' +
+                'Client decision factors: The attractiveness of the bonus offer, willingness to take risks, and desire to maximize the benefits of registering at the casino.'],
                 tolerance: 70,
                 delay: 67
             },
@@ -87,7 +99,7 @@ export const dialogues = [
             },
             {
                 request: 'How do I claim the bonus?',
-                answers: ['The bonus will be automatically credited to your account after your deposit. You can check the "Bonuses" section in your account to see your available bonuses.','[✓] Client: Initiates conversation with a greeting and expresses interest in making a deposit.\n' +
+                answers: ['The bonus will be automatically credited to your account after your deposit. You can check the "Bonuses" section in your account to see your available bonuses.', '[✓] Client: Initiates conversation with a greeting and expresses interest in making a deposit.\n' +
                 '[✓] Agent: Warmly greets the client, showing enthusiasm and readiness to assist.\n' +
                 '[✓] Client: Inquires about the process of making a deposit.\n' +
                 '[✓] Agent: Clearly explains the deposit process, mentioning the "Banking" section and available payment methods.\n' +
@@ -136,7 +148,7 @@ export const dialogues = [
             },
             {
                 request: 'No thx! Bye',
-                answers: ['Bye!','[✓] Client: greeted\n' +
+                answers: ['Bye!', '[✓] Client: greeted\n' +
                 '[✓] Manager: Welcomed the client, reflecting warmth and a positive attitude\n' +
                 '[✓] Manager: Confirmed successful interaction with the client\n' +
                 '[✓] Manager: Actively maintained dialogue by asking clarifying questions\n' +
@@ -178,7 +190,7 @@ export const dialogues = [
             },
             {
                 request: 'Alright, I\'ll wait for the update. Can I make another deposit while waiting for the withdrawal?',
-                answers: ['Ok! Write me, and i can give you additional bonuses! If you need any further assistance, don\'t hesitate to contact us. Have a good day!','[✓] Client: greeted\n' +
+                answers: ['Ok! Write me, and i can give you additional bonuses! If you need any further assistance, don\'t hesitate to contact us. Have a good day!', '[✓] Client: greeted\n' +
                 '[✓] Manager: Welcomed the client, reflecting warmth and a positive attitude\n' +
                 '[✓] Manager: Expressed enthusiasm and friendliness in communication\n' +
                 '[✓] Manager: Quick response to the client\'s request\n' +
@@ -224,7 +236,7 @@ export const dialogues = [
             },
             {
                 request: 'I will. Goodbye for now.',
-                answers: ['Goodbye, and take care. We\'re here if you need us.','[✓] Client: greeted\n' +
+                answers: ['Goodbye, and take care. We\'re here if you need us.', '[✓] Client: greeted\n' +
                 '[✓] Manager: Welcomed the client, reflecting warmth and a positive attitude\n' +
                 '[✓] Manager: Politely initiated dialogue, determining the client\'s readiness to discuss their issue or request\n' +
                 '[✓] Manager: Quick response to the client\'s request\n' +
@@ -272,7 +284,7 @@ export const dialogues = [
             },
             {
                 request: 'I will. Goodbye.',
-                answers: ['Goodbye, and take care.','[✓] Client: Initiated the conversation, expressing a desire to close the account\n' +
+                answers: ['Goodbye, and take care.', '[✓] Client: Initiated the conversation, expressing a desire to close the account\n' +
                 '[✓] Manager: Showed empathy and understanding towards the client\'s decision\n' +
                 '[✓] Manager: Asked the client for the reason for closing the account to understand the context and the possibility of improving the service\n' +
                 '[✓] Manager: Requested confirmation of personal data for client identity verification and security of the process\n' +
@@ -313,7 +325,7 @@ export const dialogues = [
             },
             {
                 request: 'No, that\'s all for now. Thank you!',
-                answers: ['You\'re welcome! If you have any other questions or need further assistance, feel free to contact us. Have a great day!', 'Goodbye!','[✓] Client: Greeted and immediately moved to the essence of the request.\n' +
+                answers: ['You\'re welcome! If you have any other questions or need further assistance, feel free to contact us. Have a great day!', 'Goodbye!', '[✓] Client: Greeted and immediately moved to the essence of the request.\n' +
                 '[✓] Manager: Effectively greeted the client and expressed readiness to help.\n' +
                 '[✓] Manager: Clearly requested current and new contact information without unnecessary questions.\n' +
                 '[✓] Client: Quickly and accurately provided the required information (current and new email addresses).\n' +
@@ -329,4 +341,73 @@ export const dialogues = [
             },
         ]
     },
+    {
+        id: 'cource',
+        name: 'Менеджер курса',
+        startMessage: 'Привет, я менеджер курса "Аналитик данных! Можешь обращаться ко мне по любым вопросам',
+        body: [
+            {
+                request: 'Расскажите о тарифах',
+                answers: ['Здравствуйте! Рады вашему интересу к нашему курсу "Аналитик данных". Обучение длится 12 месяцев. Стоимость зависит от выбранного тарифа: Стандарт - 279 333 ₽, Индивидуальный - 354 806 ₽. Сейчас действуют скидки на ближайший поток: Стандарт - 153 633 ₽, Индивидуальный - 195 143 ₽. Есть возможность рассрочки.'],
+                tolerance: 70,
+                delay: 149
+            },
+            {
+                request: 'А что включает в себя тариф "Индивидуальный"?',
+                answers: ['Тариф "Индивидуальный" предполагает персонального наставника, индивидуальные консультации и доступ к дополнительным материалам. Также предусмотрена возможность гибкой настройки графика обучения.'],
+                tolerance: 70,
+                delay: 167
+            },
+            {
+                request: 'Есть ли у вас пробный доступ к курсу, чтобы ознакомиться с программой?',
+                answers: ['Да, мы можем предоставить вам триал-доступ к курсу на 7 дней, чтобы вы могли ознакомиться с программой и форматом обучения. Это поможет вам принять более взвешенное решение.'],
+                tolerance: 70,
+                delay: 130
+            },
+            {
+                request: 'Отлично! Как мне получить этот доступ?',
+                answers: ['Для получения триал-доступа вам достаточно оставить свои контактные данные (имя, почту и номер телефона), и мы отправим вам ссылку на доступ к курсу.'],
+                tolerance: 70,
+                delay: 130
+            },
+            {
+                request: 'Хорошо, я отправлю данные. А какие документы я получу по окончании курса?',
+                answers: ['По окончании курса вы получите сертификат о прохождении обучения, который подтверждает ваши знания и навыки в области аналитики данных. Этот документ будет полезен при трудоустройстве или продвижении по карьерной лестнице.'],
+                tolerance: 70,
+                delay: 130
+            },
+            {
+                request: 'Спасибо за информацию! Подумаю и свяжусь с вами для дальнейших шагов.',
+                answers: ['Будем рады видеть вас среди наших студентов! Если возникнут дополнительные вопросы, не стесняйтесь обращаться. Удачи в выборе курса!', '[✓] Клиент: Поприветствовал и сразу перешел к сути запроса (интерес к курсу "Аналитик данных").\n' +
+                '[✓] Менеджер: Эффективно поприветствовал клиента, представился и выразил готовность помочь.\n' +
+                '[✓] Менеджер: Предоставил подробную информацию о длительности и стоимости курса, а также о скидках и возможности рассрочки.\n' +
+                '[✓] Клиент: Задал вопрос о содержании тарифа "Индивидуальный".\n' +
+                '[✓] Менеджер: Дал четкое объяснение преимуществ тарифа "Индивидуальный".\n' +
+                '[✓] Клиент: Выразил интерес к пробному доступу к курсу.\n' +
+                '[✓] Менеджер: Предложил триал-доступ и объяснил, как его получить.\n' +
+                '[✓] Клиент: Согласился отправить контактные данные для получения триал-доступа.\n' +
+                '[✓] Менеджер: Информировал клиента о сертификате, который выдается по окончании курса.\n' +
+                '[✓] Клиент: Поблагодарил за информацию и выразил намерение связаться для дальнейших шагов.\n' +
+                '[✓] Менеджер: Выразил готовность помочь в будущем и корректно закончил разговор.'],
+                tolerance: 70,
+                delay: 130
+            },
+            {
+                request: 'No, that\'s all for now. Thank you!',
+                answers: ['You\'re welcome! If you have any other questions or need further assistance, feel free to contact us. Have a great day!', 'Goodbye!', '[✓] Client: Greeted and immediately moved to the essence of the request.\n' +
+                '[✓] Manager: Effectively greeted the client and expressed readiness to help.\n' +
+                '[✓] Manager: Clearly requested current and new contact information without unnecessary questions.\n' +
+                '[✓] Client: Quickly and accurately provided the required information (current and new email addresses).\n' +
+                '[✓] Manager: Requested additional information/confirmation for client identity verification (answer to a security question or last digits of the phone number).\n' +
+                '[✓] Client: Precisely provided the requested information for verification.\n' +
+                '[✓] Manager: Confirmed successful email change and offered further assistance.\n' +
+                '[✓] Client: Expressed satisfaction with the resolution of the issue, had no more questions.\n' +
+                '[✓] Manager: Offered services for the future, wished a good day, and correctly concluded the conversation.\n' +
+                '[✓] Client: Thanked for the help and said goodbye.\n' +
+                '[✓] Manager: Politely said goodbye to the client.'],
+                tolerance: 70,
+                delay: 182
+            },
+        ]
+    }
 ];
