@@ -404,7 +404,18 @@ export const dialogues = [
                 '[✓] Client: Expressed satisfaction with the resolution of the issue, had no more questions.\n' +
                 '[✓] Manager: Offered services for the future, wished a good day, and correctly concluded the conversation.\n' +
                 '[✓] Client: Thanked for the help and said goodbye.\n' +
-                '[✓] Manager: Politely said goodbye to the client.'],
+                '[✓] Manager: Politely said goodbye to the client.','Summary client: Клиент интересовался курсом "Аналитик данных", узнал о длительности обучения, стоимости, тарифах и возможности получения триал-доступа. Выразил намерение подумать и связаться позже для дальнейших шагов.\n' +
+                'Client name: Неизвестно\n' +
+                'Client status: Новый\n' +
+                'Client goal: Узнать о курсе "Аналитик данных" и его условиях\n' +
+                'Manager goal: Предоставить информацию о курсе и условиях обучения\n' +
+                'Client recognized: Нет\n' +
+                'Client psy profile: Клиент проявил интерес к курсу, задавал конкретные вопросы по стоимости и содержанию, но, возможно, не был готов к немедленной регистрации на курс. Кажется, что он искал информацию для взвешенного решения.\n' +
+                'Client mbti: ISTJ\n' +
+                'Client mbti confidence percent: 60\n' +
+                'Client mbti traits: Клиент был организован и практичен, сосредоточен на деталях и фактах, предпочел получить всю необходимую информацию перед принятием решения.\n' +
+                'Client decision point: Момент, когда клиент сказал: "Спасибо за информацию! Подумаю и свяжусь с вами для дальнейших шагов."\n' +
+                'Client decision factors: Нужда в дополнительном времени для обдумывания полученной информации, возможная неуверенность в выборе курса или в соответствии его условий с личными потребностями и возможностями.'],
                 tolerance: 70,
                 delay: 182
             },
