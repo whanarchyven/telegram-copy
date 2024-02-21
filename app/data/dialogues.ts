@@ -388,36 +388,20 @@ export const dialogues = [
                 '[✓] Клиент: Согласился отправить контактные данные для получения триал-доступа.\n' +
                 '[✓] Менеджер: Информировал клиента о сертификате, который выдается по окончании курса.\n' +
                 '[✓] Клиент: Поблагодарил за информацию и выразил намерение связаться для дальнейших шагов.\n' +
-                '[✓] Менеджер: Выразил готовность помочь в будущем и корректно закончил разговор.'],
+                '[✓] Менеджер: Выразил готовность помочь в будущем и корректно закончил разговор.', '\'Summary client: Клиент интересовался курсом "Аналитик данных", узнал о длительности обучения, стоимости, тарифах и возможности получения триал-доступа. Выразил намерение подумать и связаться позже для дальнейших шагов.\\n\' +\n' +
+                '                \'Client name: Неизвестно\\n\' +\n' +
+                '                \'Client status: Новый\\n\' +\n' +
+                '                \'Client goal: Узнать о курсе "Аналитик данных" и его условиях\\n\' +\n' +
+                '                \'Manager goal: Предоставить информацию о курсе и условиях обучения\\n\' +\n' +
+                '                \'Client recognized: Нет\\n\' +\n' +
+                '                \'Client psy profile: Клиент проявил интерес к курсу, задавал конкретные вопросы по стоимости и содержанию, но, возможно, не был готов к немедленной регистрации на курс. Кажется, что он искал информацию для взвешенного решения.\\n\' +\n' +
+                '                \'Client mbti: ISTJ\\n\' +\n' +
+                '                \'Client mbti confidence percent: 60\\n\' +\n' +
+                '                \'Client mbti traits: Клиент был организован и практичен, сосредоточен на деталях и фактах, предпочел получить всю необходимую информацию перед принятием решения.\\n\' +\n' +
+                '                \'Client decision point: Момент, когда клиент сказал: "Спасибо за информацию! Подумаю и свяжусь с вами для дальнейших шагов."\\n\' +\n' +
+                '                \'Client decision factors: Нужда в дополнительном времени для обдумывания полученной информации, возможная неуверенность в выборе курса или в соответствии его условий с личными потребностями и возможностями.\''],
                 tolerance: 70,
                 delay: 130
-            },
-            {
-                request: 'No, that\'s all for now. Thank you!',
-                answers: ['You\'re welcome! If you have any other questions or need further assistance, feel free to contact us. Have a great day!', 'Goodbye!', '[✓] Client: Greeted and immediately moved to the essence of the request.\n' +
-                '[✓] Manager: Effectively greeted the client and expressed readiness to help.\n' +
-                '[✓] Manager: Clearly requested current and new contact information without unnecessary questions.\n' +
-                '[✓] Client: Quickly and accurately provided the required information (current and new email addresses).\n' +
-                '[✓] Manager: Requested additional information/confirmation for client identity verification (answer to a security question or last digits of the phone number).\n' +
-                '[✓] Client: Precisely provided the requested information for verification.\n' +
-                '[✓] Manager: Confirmed successful email change and offered further assistance.\n' +
-                '[✓] Client: Expressed satisfaction with the resolution of the issue, had no more questions.\n' +
-                '[✓] Manager: Offered services for the future, wished a good day, and correctly concluded the conversation.\n' +
-                '[✓] Client: Thanked for the help and said goodbye.\n' +
-                '[✓] Manager: Politely said goodbye to the client.','Summary client: Клиент интересовался курсом "Аналитик данных", узнал о длительности обучения, стоимости, тарифах и возможности получения триал-доступа. Выразил намерение подумать и связаться позже для дальнейших шагов.\n' +
-                'Client name: Неизвестно\n' +
-                'Client status: Новый\n' +
-                'Client goal: Узнать о курсе "Аналитик данных" и его условиях\n' +
-                'Manager goal: Предоставить информацию о курсе и условиях обучения\n' +
-                'Client recognized: Нет\n' +
-                'Client psy profile: Клиент проявил интерес к курсу, задавал конкретные вопросы по стоимости и содержанию, но, возможно, не был готов к немедленной регистрации на курс. Кажется, что он искал информацию для взвешенного решения.\n' +
-                'Client mbti: ISTJ\n' +
-                'Client mbti confidence percent: 60\n' +
-                'Client mbti traits: Клиент был организован и практичен, сосредоточен на деталях и фактах, предпочел получить всю необходимую информацию перед принятием решения.\n' +
-                'Client decision point: Момент, когда клиент сказал: "Спасибо за информацию! Подумаю и свяжусь с вами для дальнейших шагов."\n' +
-                'Client decision factors: Нужда в дополнительном времени для обдумывания полученной информации, возможная неуверенность в выборе курса или в соответствии его условий с личными потребностями и возможностями.'],
-                tolerance: 70,
-                delay: 182
             },
         ]
     }
