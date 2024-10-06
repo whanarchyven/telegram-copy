@@ -6,60 +6,39 @@ import Voice, {VoiceMessageProps} from "@/app/chat/ui/messages/message-component
 import {messagesSelectors} from "@/app/store/messagesSlice";
 import {useAppSelector} from "@/app/store/hooks/useAppSelector";
 import {useEffect, useState} from "react";
+import {useSearchParams} from "next/navigation";
+import {getDialogue} from "@/app/data/get-dialogue";
+import {ClipLoader} from "react-spinners";
 export default function Home() {
 
     //Подключаем редукс
 
-    const data: Array<MessageProps | VoiceMessageProps> = [
-        {
-            category: 'default',
-            author: 'whanarchyvven',
-            status: 'send',
-            time: '2024-02-14T19:24:59.318Z',
-            type: 'foreign',
-            children: 'Большинство мобилкой пользуются',
-            duration:5
-        },
-        {
-            category: 'default',
-            author: 'whanarchyvven',
-            status: 'send',
-            time: '2024-02-14T19:24:59.318Z',
-            type: 'mine',
-            children: 'Большинство мобилкой пользуются'
-        }
-        ,
-        {
-            category: 'default',
-            author: 'whanarchyvven',
-            status: 'send',
-            time: '2024-02-14T19:24:59.318Z',
-            type: 'mine',
-            children: 'Большинство мобилкой пользуются'
-        }
-        ,
-        {
-            category: 'default',
-            author: 'whanarchyvven',
-            status: 'send',
-            time: '2024-02-14T19:24:59.318Z',
-            type: 'mine',
-            children: 'Большинство мобилкой пользуются'
-        }
+    const params = useSearchParams();
 
-    ]
+    const chat_id = params.get('chat_id');
 
-    const storeMessagesState=useAppSelector(messagesSelectors.messages)
+    // const storeMessagesState=useAppSelector(messagesSelectors.messages)
+    //
+    // const [messages,setMessages]=useState<Array<MessageProps | VoiceMessageProps>>([])
+    //
+    // useEffect(() => {
+    //     setMessages([...storeMessagesState.messages])
+    // }, [storeMessagesState]);
 
-    const [messages,setMessages]=useState<Array<MessageProps | VoiceMessageProps>>([])
+    const [messages,setMessages]=useState([])
+    const [loading,setLoading]=useState(true)
 
     useEffect(() => {
-        setMessages([...storeMessagesState.messages])
-    }, [storeMessagesState]);
+        getDialogue(chat_id??'').then((res)=>{
+            console.log(res.data)
+            setMessages(res.data)
+            setLoading(false)
+        })
+    }, []);
 
     return (
         <main className={'w-full h-full flex items-center justify-center'}>
-            <Messages messages={messages}/>
+            {loading?<ClipLoader color={'#0E76F1'}/>:<Messages messages={messages}/>}
         </main>
     );
 }

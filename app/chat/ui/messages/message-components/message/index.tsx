@@ -75,7 +75,7 @@ const Message: FC<MessageProps> = ({children, type, status, time, hideTail,categ
             })}>
                 <div className={cvaMessageBodyBlock()}>{children}</div>
                 <div className={cvaMessageTimeBlock()}>
-                    <p className={cvaMessageTimeTitle({type: type})}>{format(time, 'hh:mm')}</p>
+                    {/*<p className={cvaMessageTimeTitle({type: type})}>{format(new Date(time), 'hh:mm')}</p>*/}
                     {type == 'mine' && (status == 'send' ? <SendIcon className={cvaStatusIcon()}/> :
                         <AcceptedIcon className={cvaStatusIcon()}/>)}
                 </div>

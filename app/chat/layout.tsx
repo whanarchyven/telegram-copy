@@ -12,9 +12,9 @@ export default function ChatLayout({
         <div className={'flex flex-col h-screen'}>
             <Suspense>
                 <Header/>
+                {children}
+                <MessageContainer/>
             </Suspense>
-            {children}
-            <MessageContainer/>
         </div>
     );
 }

@@ -3,9 +3,17 @@ import {FC, useEffect, useRef, useState} from 'react';
 import Message, {MessageProps} from "./message-components/message";
 import AudioVisualizer from "@/app/chat/ui/messages/message-components/voice/ui/audio-visualizer";
 import Voice, {VoiceMessageProps} from "./message-components/voice";
+import {format} from "date-fns";
 
 export interface MessagesInterface {
-    messages: Array<MessageProps | VoiceMessageProps>
+    messages: Array<{
+        user_id: string,
+        username: string,
+        text: string,
+        tg_account: string,
+        type: string,
+        created_at: string
+    } | VoiceMessageProps>
 }
 
 const Messages: FC<MessagesInterface> = ({messages}) => {
@@ -34,8 +42,8 @@ const Messages: FC<MessagesInterface> = ({messages}) => {
                     } else {
                         return (
                             <div key={counter} className={'my-2'}>
-                                <Message hideTail={false} {...message}>
-                                    {message.children}
+                                <Message hideTail={false} author={message.username} status={'accepted'} type={message.type=='sent'?'mine':'foreign'} time={format(new Date(message.created_at),'hh:mm')}>
+                                    {message.text}
                                 </Message>
                             </div>
                         );

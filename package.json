@@ -11,8 +11,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
     "@svgr/webpack": "^8.1.0",
+    "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
-    "date-fns": "^3.3.1",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
     "next-redux-wrapper": "^8.1.0",
