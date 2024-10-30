@@ -22,7 +22,7 @@ export default function RootLayout({
             <link rel={'manifest'} href={'/manifest.json'}/>
         </head>
         <ReduxProvide>
-            <body className={'relative h-screen'}>
+            <body className={'relative block lg:flex lg:flex-row'}>
             {children}
             </body>
         </ReduxProvide>

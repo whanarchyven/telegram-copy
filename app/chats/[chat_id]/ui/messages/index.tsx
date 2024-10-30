@@ -29,9 +29,10 @@ const Messages: FC<MessagesInterface> = ({messages}) => {
 
     return (
         <div className={'h-full relative w-full'}>
-            <img src={'/images/bg_overlay.png'} className={'h-screen w-full absolute left-0 top-0'}>
+            <img src={'/images/bg_overlay.png'} className={'h-screen w-full lg:hidden object-cover absolute left-0 top-0'}/>
 
-            </img>
+            <img src={'/images/bg_overlay_desktop.png'} className={'h-screen hidden lg:flex w-full object-cover absolute left-0 top-0'}/>
+
             <div ref={containerRef}
                  className="absolute bottom-0 pt-16 h-fit scroll-smooth flow-root items-end gap-2 justify-end max-h-full left-0 w-full overflow-y-scroll">
                 {messages.map((message, counter) => {

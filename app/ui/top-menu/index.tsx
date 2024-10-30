@@ -27,7 +27,7 @@ const TopMenu:FC = () => {
     }, []);
 
     return (
-        <div className={'sticky z-50 top-0 bg-cGrayUltraLight p-4 flex flex-col gap-3'}>
+        <div className={'sticky z-50 top-0 lg:hidden bg-cGrayUltraLight p-4 flex flex-col gap-3'}>
             <div className={'flex items-center justify-between'}>
                 <div className={'flex items-center justify-center font-sf text-lg font-medium text-cBlue'}>
                     Изм.
